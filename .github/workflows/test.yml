@@ -26,12 +26,12 @@ jobs:
     - name: Install dependencies
       run: npm ci
 
-    - name: Run tests
-      run: npm test
+    - name: Run tests with report
+      run: npm run test:report
 
     - name: Upload test results
       if: always()
       uses: actions/upload-artifact@v4
       with:
         name: test-report
-        path: mochawesome-report/
+        path: mochawesome-report
